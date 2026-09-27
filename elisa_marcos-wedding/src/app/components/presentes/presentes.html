@@ -51,16 +51,24 @@
     <div class="modal" role="dialog" aria-modal="true" (click)="$event.stopPropagation()">
       <button class="close material-symbols-outlined" type="button" (click)="fechar()" aria-label="Fechar">close</button>
 
-      <span class="icon material-symbols-outlined">{{ item.icone }}</span>
-      <h2>{{ item.titulo }}</h2>
-      <p class="desc">{{ item.descricao }}</p>
-      <strong>{{ brl(item.valor) }}</strong>
+      <span class="icon material-symbols-outlined">{{ concluido() ? 'favorite' : item.icone }}</span>
 
-      <span class="eyebrow">Escaneie para presentear</span>
-      <app-qr class="qr" [text]="codigoPresente()" />
+      @if (!concluido()) {
+        <h2>{{ item.titulo }}</h2>
+        <p class="desc">{{ item.descricao }}</p>
+        <strong>{{ brl(item.valor) }}</strong>
 
-      <p class="key">{{ chavePix }}</p>
-      <ng-container *ngTemplateOutlet="copiarBtn" />
+        <span class="eyebrow">Escaneie para presentear</span>
+        <app-qr class="qr" [text]="codigoPresente()" />
+
+        <p class="key">{{ chavePix }}</p>
+        <ng-container *ngTemplateOutlet="copiarBtn" />
+        <button class="btn primary" type="button" (click)="concluido.set(true)">Já fiz o Pix</button>
+      } @else {
+        <h2>Obrigado!</h2>
+        <p class="desc">Seu carinho significa muito para nós. Mal podemos esperar para celebrar com você! 💚</p>
+        <button class="btn primary" type="button" (click)="fechar()">Fechar</button>
+      }
     </div>
   </div>
 }
