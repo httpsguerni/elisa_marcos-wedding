@@ -1,0 +1,189 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 420px;
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: 24px 16px 40px;
+  background: #fff;
+  box-shadow: 0 0 24px rgb(0 0 0 / 0.06);
+}
+
+.topbar {
+  position: relative;
+  text-align: center;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--purple);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.4rem;
+  color: var(--purple);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: -12px;
+  color: var(--gold);
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+.photo {
+  margin: 0;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.07);
+}
+
+.photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.place {
+  text-align: center;
+}
+
+.place h2 {
+  font-size: 1.6rem;
+  color: var(--purple);
+}
+
+.place p {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  position: relative;
+  display: flex;
+  gap: 12px;
+}
+
+.timeline li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 34px;
+  bottom: -32px;
+  left: 16px;
+  width: 1px;
+  background: #ddd;
+}
+
+.icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.timeline h3 {
+  font-size: 1.05rem;
+}
+
+.time {
+  display: block;
+  margin: 2px 0 12px;
+  font-size: 0.7rem;
+  color: var(--purple);
+}
+
+.timeline p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--purple);
+  box-shadow: 0 4px 12px rgb(122 85 179 / 0.3);
+  font-size: 0.85rem;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #9474c4;
+}
+
+.btn .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.signature .eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.signature p {
+  font-family: 'Milton One', cursive;
+  font-size: 2.5rem;
+  color: var(--purple);
+}

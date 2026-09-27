@@ -1,0 +1,48 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mea+Culpa&display=swap" rel="stylesheet">
+
+<main class="card">
+  <header class="hero">
+    <img src="images/casamento.jpg" alt="Elisa e Marcos">
+    <span></span>
+  </header>
+
+  
+
+  <section class="content">
+    <p class="eyebrow">Você é nosso convidado</p>
+
+    <h1 class="names">Elisa <span>E</span> Marcos</h1>
+    <span class="heart">♡</span>
+
+    <dl class="info">
+        <dt>Data</dt>
+        <dd>{{ info.data }}</dd>
+        <dt>Horário</dt>
+        <dd>{{ info.horario }}</dd>
+        <dt>Local</dt>
+        <dd>{{ info.local }} <small>{{ info.endereco }}</small></dd>
+    </dl>
+
+    <div class="countdown">
+      @for (item of countdown(); track item.label) {
+        <div>
+          <strong>{{ item.value }}</strong>
+          <span>{{ item.label }}</span>
+        </div>
+      }
+    </div>
+
+<nav class="actions">
+  <a class="btn primary" routerLink="/presenca">Confirmar Presença</a>
+  <a class="btn" routerLink="/fotos">Fotos do Pré-Wedding</a>
+  <a class="btn" routerLink="/presentes">Lista de Presentes</a>
+  <a class="btn" routerLink="/localizacao">Localização</a>
+</nav>
+<footer class="signature">
+  <span class="eyebrow">Com carinho,</span>
+  <p>Elisa e Marcos</p>
+</footer>
+  </section>
+</main>

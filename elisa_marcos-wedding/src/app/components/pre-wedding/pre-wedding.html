@@ -1,0 +1,38 @@
+<main class="card">
+  <header class="topbar">
+    <a class="back" routerLink="/" aria-label="Voltar">‹</a>
+  </header>
+
+  <section class="profile">
+    <img class="avatar" src="images/pre-wedding/profile.jpg" alt="Elisa e Marcos">
+    <h1>Elisa & Marcos</h1>
+  </section>
+
+  <section class="bio">
+    <h2>Um capítulo especial da nossa história ✨</h2>
+    <p>Registrando momentos, sorrisos e a contagem regressiva para o nosso grande dia.</p>
+  </section>
+
+  <nav class="actions">
+    <a class="btn" routerLink="/presenca">Confirmar sua presença</a>
+  </nav>
+
+  <div class="grid">
+    @for (foto of fotos; track foto) {
+      <button type="button" (click)="aberta.set(foto)">
+        <img [src]="foto" alt="Foto do pré-wedding" loading="lazy">
+      </button>
+    }
+  </div>
+
+  <footer class="signature">
+    <span class="eyebrow">Com carinho,</span>
+    <p>Elisa & Marcos</p>
+  </footer>
+</main>
+
+@if (aberta(); as foto) {
+  <div class="lightbox" (click)="aberta.set(null)">
+    <img [src]="foto" alt="Foto do pré-wedding ampliada">
+  </div>
+}

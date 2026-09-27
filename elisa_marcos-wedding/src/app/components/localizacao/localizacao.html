@@ -1,0 +1,42 @@
+<main class="card">
+  <header class="topbar">
+    <a class="back" routerLink="/" aria-label="Voltar">‹</a>
+    <h1>Localização</h1>
+  </header>
+
+  <div class="divider">♡</div>
+
+  <figure class="photo">
+    <img src="images/local.jpg" [alt]="local.nome">
+  </figure>
+
+  <div class="place">
+    <h2>{{ local.nome }}</h2>
+    <p>{{ local.descricao }}</p>
+  </div>
+
+  <ol class="timeline">
+    @for (etapa of etapas; track etapa.titulo) {
+      <li>
+        <span class="icon material-symbols-outlined">{{ etapa.icone }}</span>
+        <div>
+          <h3>{{ etapa.titulo }}</h3>
+          <span class="time">{{ etapa.horario }}</span>
+          @for (linha of etapa.linhas; track linha) {
+            <p>{{ linha }}</p>
+          }
+        </div>
+      </li>
+    }
+  </ol>
+
+  <a class="btn" [href]="mapsUrl" target="_blank" rel="noopener">
+    <span class="material-symbols-outlined">map</span>
+    Abrir no Google Maps
+  </a>
+
+  <footer class="signature">
+    <span class="eyebrow">Com carinho,</span>
+    <p>Elisa e Marcos</p>
+  </footer>
+</main>

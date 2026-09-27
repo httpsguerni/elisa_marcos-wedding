@@ -1,0 +1,73 @@
+<main class="card">
+  <header class="topbar">
+    <a class="back" routerLink="/" aria-label="Voltar">‹</a>
+    <span>Nossa Lista</span>
+  </header>
+
+  <div class="divider">♡</div>
+
+  <h1>Presentes & Carinho</h1>
+  <p class="intro">
+    Sua presença é o nosso maior presente. Mas se desejar nos presentear,
+    aqui estão algumas sugestões.
+  </p>
+
+  <section class="box lista">
+    <span class="icon material-symbols-outlined">redeem</span>
+    <h2>Nossa Lista de Presentes</h2>
+    <p class="desc">Preparamos uma lista especial com itens para o nosso novo lar.</p>
+    <a class="btn primary" [href]="listaUrl" target="_blank" rel="noopener">Acessar Lista</a>
+  </section>
+
+  <section class="box">
+    <span class="badge">Contribuição via PIX</span>
+    <app-qr class="qr" [text]="codigoPix" />
+    <p class="key">{{ chavePix }}</p>
+    <ng-container *ngTemplateOutlet="copiarBtn" />
+  </section>
+
+  <h3 class="eyebrow">Outras sugestões</h3>
+
+  <div class="grid">
+    @for (item of sugestoes; track $index) {
+      <article class="box item">
+        <span class="icon material-symbols-outlined">{{ item.icone }}</span>
+        <h2>{{ item.titulo }}</h2>
+        <p class="desc">{{ item.descricao }}</p>
+        <strong>{{ brl(item.valor) }}</strong>
+        <button class="btn" type="button" (click)="abrir(item)">Presentear</button>
+      </article>
+    }
+  </div>
+
+  <footer>
+    <span class="eyebrow">Com carinho,</span>
+    <p class="names">Elisa & Marcos</p>
+  </footer>
+</main>
+
+@if (selecionado(); as item) {
+  <div class="overlay" (click)="fechar()">
+    <div class="modal" role="dialog" aria-modal="true" (click)="$event.stopPropagation()">
+      <button class="close material-symbols-outlined" type="button" (click)="fechar()" aria-label="Fechar">close</button>
+
+      <span class="icon material-symbols-outlined">{{ item.icone }}</span>
+      <h2>{{ item.titulo }}</h2>
+      <p class="desc">{{ item.descricao }}</p>
+      <strong>{{ brl(item.valor) }}</strong>
+
+      <span class="eyebrow">Escaneie para presentear</span>
+      <app-qr class="qr" [text]="codigoPresente()" />
+
+      <p class="key">{{ chavePix }}</p>
+      <ng-container *ngTemplateOutlet="copiarBtn" />
+    </div>
+  </div>
+}
+
+<ng-template #copiarBtn>
+  <button class="btn" type="button" (click)="copiar()">
+    <span class="material-symbols-outlined">{{ copiado() ? 'check' : 'content_copy' }}</span>
+    {{ copiado() ? 'Chave copiada!' : 'Copiar Chave PIX' }}
+  </button>
+</ng-template>

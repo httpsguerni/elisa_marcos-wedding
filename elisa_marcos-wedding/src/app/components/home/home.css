@@ -1,0 +1,198 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  margin: 2px solid red;
+}
+
+:host {
+  --purple: #9474c4;
+  --gold: #c9a15b;
+  --muted: #888;
+  display: block;
+  min-height: 100vh;
+  background: #f4f3f2;
+  color: #333;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.card {
+  max-width: 420px;
+  margin-inline: auto;
+  background: #f7f6f5;
+  box-shadow: 0 0 24px rgb(0 0 0 / 0.06);
+}
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.hero span {
+  position: absolute;
+  top: 12px;
+  inset-inline: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.hero span,
+.eyebrow,
+dt,
+.countdown span {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--purple);
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(3.5rem, 14vw, 4.5rem);
+  line-height: 1.2;
+  color: var(--purple);
+}
+
+.names span,
+.heart {
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+dt {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+dd {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+dd small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.countdown {
+  display: flex;
+  gap: 24px;
+}
+
+.countdown div {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown strong {
+  font-size: 1.6rem;
+  color: var(--purple);
+}
+
+.countdown span {
+  color: var(--gold);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn {
+  padding: 14px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--gold);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+
+}
+
+.btn.primary {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
+  box-shadow: 0 4px 12px rgb(148 116 196 / 0.3);
+}
+
+.btn.primary:hover {
+  background: #9474c4;
+  border-color: #9474c4;
+}
+
+
+
+.btn:not(.primary):hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+:host {
+  --purple: #7a55b3;
+  --gold: #9a6e2a;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Milton One Bold', cursive;
+  font-weight: 400;
+  font-size: clamp(6rem, 26vw, 7.5rem);
+  line-height: 1.2;
+  color: var(--purple);
+
+}
+
+.names span {
+  font-size: 1.8rem;
+}
+
+.heart {
+  font-size: 1.5rem;
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.signature .eyebrow {
+  color: var(--gold);
+}
+
+.signature p {
+  font-family: 'Milton One', cursive;
+  font-size: 2.5rem;
+  color: var(--purple);
+}

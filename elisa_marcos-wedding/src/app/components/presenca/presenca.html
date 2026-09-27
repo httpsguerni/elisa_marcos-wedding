@@ -1,0 +1,58 @@
+<main class="card">
+  <header class="topbar">
+    <a class="back" routerLink="/" aria-label="Voltar">‹</a>
+    <span>Presença</span>
+  </header>
+
+  <div class="divider">♡</div>
+
+  @if (status() === 'sucesso') {
+    <section class="success">
+      <h1>Presença confirmada!</h1>
+      <p class="quote">Obrigado, {{ nome }}. Mal podemos esperar para celebrar esse dia com você.</p>
+      <a class="submit" routerLink="/">Voltar ao início</a>
+    </section>
+  } @else {
+    <h1>Confirmar Presença</h1>
+
+    <p class="quote">
+      “Sua presença é o nosso maior presente. Por favor, confirme sua participação
+      para que possamos celebrar juntos este momento único.”
+    </p>
+
+    <form (ngSubmit)="confirmar()">
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input id="nome" name="nome" [(ngModel)]="nome" placeholder="Digite seu nome completo" required>
+      </div>
+
+      <div class="field">
+        <span class="label">Número de acompanhantes</span>
+        <div class="stepper">
+          <button type="button" (click)="alterar(-1)" [disabled]="acompanhantes() === 0" aria-label="Diminuir">−</button>
+          <output>{{ total() }}</output>
+          <button type="button" class="plus" (click)="alterar(1)" [disabled]="acompanhantes() === max" aria-label="Aumentar">+</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="recado">Recado aos noivos (opcional)</label>
+        <textarea id="recado" name="recado" [(ngModel)]="recado" rows="3" placeholder="Uma breve mensagem aos noivos."></textarea>
+      </div>
+
+      @if (status() === 'erro') {
+        <p class="error">Não foi possível enviar. Tente novamente.</p>
+      }
+
+      <button class="submit" type="submit" [disabled]="!nome.trim() || status() === 'enviando'">
+        {{ status() === 'enviando' ? 'Enviando...' : 'Confirmar Presença →' }}
+      </button>
+    </form>
+
+    <p class="deadline">Por favor, confirme até<br>{{ prazo }}</p>
+  }
+  <footer class="signature">
+  <span class="eyebrow">Com carinho,</span>
+  <p>Elisa e Marcos</p>
+</footer>
+</main>
