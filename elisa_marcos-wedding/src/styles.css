@@ -5,18 +5,6 @@ body { background: #f4f3f2; }
 
 img { max-width: 100%; display: block; }
 
-@font-face {
-  font-family: 'Milton One';
-  src: url('/fonts/Milton_One.otf') format('opentype');
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'Milton One Bold';
-  src: url('/fonts/Milton_One_Bold.otf') format('opentype');
-  font-display: swap;
-}
 
 :root {
   --purple: #7a55b3;
