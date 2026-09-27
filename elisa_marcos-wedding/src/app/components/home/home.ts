@@ -9,13 +9,13 @@ import { RouterLink } from '@angular/router';
 })
 export class Home implements OnDestroy {
   protected readonly info = {
-    data: '10 de Junho de 2027',
+    data: '04 de Setembro de 2027',
     horario: 'Às 16:00 horas',
     local: 'Nome do Local',
     endereco: 'Endereço completo'
   };
 
-  private readonly target = new Date('2027-06-10T16:00:00').getTime();
+  private readonly target = new Date('2027-09-04T16:00:00').getTime();
   protected readonly countdown = signal(this.calc());
   private readonly timer = setInterval(() => this.countdown.set(this.calc()), 1000);
 
