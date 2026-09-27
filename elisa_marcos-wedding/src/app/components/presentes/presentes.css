@@ -96,8 +96,8 @@ h1 {
 }
 
 .lista .icon {
-  background: rgb(122 85 179 / 0.12);
-  color: var(--purple);
+  background: rgb(0 90 69 / 0.12);
+  color: var(--green);
 }
 
 h2 {
@@ -130,13 +130,13 @@ h2 {
 
 .btn.primary {
   border: none;
-  background: var(--purple);
-  box-shadow: 0 4px 12px rgb(122 85 179 / 0.3);
+  background: var(--green);
+  box-shadow: 0 4px 12px rgb(0 90 69 / 0.3);
   color: #fff;
 }
 
 .btn.primary:hover {
-  background: #9474c4;
+  background: #00674F;
 }
 
 .btn .material-symbols-outlined {
@@ -145,9 +145,9 @@ h2 {
 
 .badge {
   padding: 4px 12px;
-  border: 1px solid rgb(122 85 179 / 0.3);
+  border: 1px solid rgb(0 90 69 / 0.3);
   border-radius: 999px;
-  color: var(--purple);
+  color: var(--green);
 }
 
 .qr {

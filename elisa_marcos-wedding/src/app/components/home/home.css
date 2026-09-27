@@ -9,7 +9,7 @@ img { max-width: 100%; display: block; }
 }
 
 :host {
-  --purple: #9474c4;
+  --purple: #00674F;
   --gold: #c9a15b;
   --muted: #888;
   display: block;
@@ -70,10 +70,11 @@ dt,
   display: flex;
   flex-direction: column;
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(3.5rem, 14vw, 4.5rem);
   line-height: 1.2;
-  color: var(--purple);
+  color: #004D3B;
+  -webkit-text-stroke: 0.5px currentColor;
 }
 
 .names span,
@@ -141,12 +142,12 @@ dd small {
   background: var(--purple);
   border-color: var(--purple);
   color: #fff;
-  box-shadow: 0 4px 12px rgb(148 116 196 / 0.3);
+ box-shadow: 0 4px 12px rgb(0 103 79 / 0.3);
 }
 
 .btn.primary:hover {
-  background: #9474c4;
-  border-color: #9474c4;
+  background: #00674F;
+  border-color: #00674F;
 }
 
 
@@ -157,7 +158,7 @@ dd small {
 }
 
 :host {
-  --purple: #7a55b3;
+  --purple: #00674F;
   --gold: #9a6e2a;
 }
 
@@ -199,8 +200,8 @@ dd small {
 
 @media (max-width: 480px) {
   .names {
-    color: #5e3a99;
+    color: #004D3B;
     -webkit-text-stroke: 0.5px currentColor;
-    text-shadow: 0 1px 2px rgb(94 58 153 / 0.3);
+    text-shadow: 0 1px 2px rgb(0 77 59 / 0.3);
   }
 }

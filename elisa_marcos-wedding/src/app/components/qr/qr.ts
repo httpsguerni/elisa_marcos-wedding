@@ -8,7 +8,7 @@ import QRCode from 'qrcode';
 })
 export class Qr {
   readonly text = input.required<string>();
-  readonly color = input('#7a55b3');
+  readonly color = input('#005A45');
 
   protected readonly src = signal('');
 

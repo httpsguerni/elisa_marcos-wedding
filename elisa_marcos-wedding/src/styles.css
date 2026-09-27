@@ -7,7 +7,8 @@ img { max-width: 100%; display: block; }
 
 
 :root {
-  --purple: #7a55b3;
+  --purple: #00674F;
   --gold: #9a6e2a;
   --muted: #888;
+  --green: #005A45;
 }
